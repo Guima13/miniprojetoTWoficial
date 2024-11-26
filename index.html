@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Exemplo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para a seção de Contato */
+        .contato-section {
+            background-color: #e4c1b9; /* Cor de fundo mais suave */
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Espaço entre os dois blocos */
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para os contêineres dos formulários */
+        .contato-section .contact-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px; /* Limita o tamanho */
+        }
+
+        /* Título do Formulário */
+        .contato-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para os campos de input e textarea */
+        .contato-section input,
+        .contato-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo do botão */
+        .contato-section button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d9534f; /* Cor vibrante */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contato-section button:hover {
+            background-color: #c43f36; /* Cor mais escura quando o botão é hover */
+        }
+
+        /* Estilo para as informações de contato */
+        .contato-section .contact-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .contato-section .contact-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Alinhamento e estilo geral da seção */
+        .contato-section .contact-box,
+        .contato-section .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção Home (Vídeo de Fundo) -->
+    <section id="home" class="hero">
+        <!-- Vídeo de fundo -->
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="video" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+
+        <!-- Conteúdo principal -->
+        <div class="hero-text">
+            <h1>Experiência Gastronômica Única</h1>
+            <p>Sabores refinados e uma atmosfera acolhedora.</p>
+            <a href="#reservas" class="cta-button">Reserve Sua Mesa</a>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="menu-section">
+        <h2>Nosso Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="francesinha.jpg" alt="Prato 1">
+                <h3>Francesinha Especial</h3>
+                <p>Constituída por linguiça, salsicha fresca, fiambre, carne de vaca e uma cobertura de queijo posteriormente derretido.</p>
+            </div>
+            <div class="menu-item">
+                <img src="francesinha guarda.jpg" alt="Prato 2">
+                <h3>Francesinha Guarda-sol</h3>
+                <p>Constituída por pão baguete, com o recheio de queijo e fiambre, coberto com o delicioso molho da casa, acompanhado com batatas fritas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linha Divisória entre o Menu e Reservas -->
+    <div class="section-divider"></div>
+
+    <!-- Reservas -->
+    <section id="reservas" class="reservas-section">
+        <h2>Faça Sua Reserva</h2>
+        <form action="/reservas" method="POST">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora">
+            <label for="pessoas">Número de Pessoas:</label>
+            <input type="number" id="pessoas" name="pessoas" min="1">
+            <button type="submit">Reservar Agora</button>
+        </form>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre-section">
+        <h2>Sobre Nós</h2>
+        <p>Inaugurado em 1922 em pleno areal da famosa avenida dos banhos na Póvoa de Varzim, possui um serviço diversificado de cafetaria e snack bar.
+
+            Uma das especialidades reconhecida são as várias francesinhas que produzimos, poveiras, especiais e à guarda sol, muito procuradas e adoradas por todos os clientes, tanto de verão como de inverno.</p>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato-section">
+        <div class="contact-box">
+            <h2>Envie sua Mensagem</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Informações de Contato</h2>
+            <p>Telefone: (xx) xxxx-xxxx</p>
+            <p>Endereço: Rua Exemplo, 123, Cidade, Estado</p>
+            <p>E-mail: exemplo@dominio.com</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <img src="logo" alt="Logo" class="footer-logo">
+        <p>&copy; 2024 Restaurante Exemplo. Todos os direitos reservados.</p>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
